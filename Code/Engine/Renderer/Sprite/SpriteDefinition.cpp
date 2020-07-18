@@ -18,7 +18,7 @@ const Texture& SpriteDefinition::GetTexture() const
 
 float SpriteDefinition::GetAspectRatio() const
 {
-    Vec2 sizeOfSprite = m_UVAtTopRight - m_UVAtBottomLeft;
+    Vec2 sizeOfSprite = Vec2( m_UVAtTopRight.x - m_UVAtBottomLeft.x, m_UVAtBottomLeft.y - m_UVAtTopRight.y );
     return GetTexture().GetAspectRatio() * (sizeOfSprite.x / sizeOfSprite.y);
 }
 
